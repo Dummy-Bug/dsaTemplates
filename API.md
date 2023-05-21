@@ -35,6 +35,5 @@
 
 ## API Endpoints
 
-GET /subjects
-
-Get all subject/topics available
+**GET /subjects**
+> Get all subject/topics available
