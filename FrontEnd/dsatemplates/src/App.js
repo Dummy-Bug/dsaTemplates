@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Subjects from './Subjects';
 import Topics from './Topics';
+
 import './App.css';
 
 function App() {
@@ -10,14 +11,17 @@ function App() {
     setSelectedTopic(topic);
   };
 
+  let content;
+  if (selectedTopic) {
+    content = <Topics topic={selectedTopic} />;
+  } else {
+    content = <Subjects onSelectTopic={handleSelectTopic} />;
+  }
+
   return (
     <div className="App">
       <h1>Welcome to dsaTemplates</h1>
-      {selectedTopic ? (
-        <Topics topic={selectedTopic} />
-      ) : (
-        <Subjects onSelectTopic={handleSelectTopic} />
-      )}
+      {content}
     </div>
   );
 }
