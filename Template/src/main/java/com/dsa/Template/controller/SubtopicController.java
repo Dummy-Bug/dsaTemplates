@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/topics/{topicId}")
+@RequestMapping("/topics/{topic}")
 public class SubtopicController {
     @Autowired
     private SubtopicService subtopicService;
 
     @GetMapping
-    public List<String> getAllSubtopicsForTopic(@PathVariable Long topicId) {
-        return subtopicService.getAllSubtopicsForTopic(topicId);
+    public List<String> getAllSubtopicsForTopic(@PathVariable String topic) {
+        return subtopicService.getAllSubtopicsForTopic(topic);
     }
 }

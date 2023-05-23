@@ -12,7 +12,7 @@ public class SubtopicService {
 
     @Autowired
     private SubTopicRepository subTopicRepository;
-    public List<String> getAllSubtopicsForTopic(Long topicId){
-        return subTopicRepository.getAllSubtopicsForTopic(topicId);
+    public List<String> getAllSubtopicsForTopic(String topic){
+        return subTopicRepository.findSubtopicsForTopic(topic);
     }
 }

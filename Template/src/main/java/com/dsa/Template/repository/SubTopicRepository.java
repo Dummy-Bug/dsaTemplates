@@ -1,5 +1,9 @@
 package com.dsa.Template.repository;
 
+import com.dsa.Template.Entity.Question;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -8,22 +12,15 @@ import java.util.List;
 @Repository
 public class SubTopicRepository {
 
-    public List<String> getAllSubtopicsForTopic(Long topicId)
-    {
-        List<String> subTopics = new ArrayList<>();
+    @PersistenceContext
+    EntityManager entityManager;
 
-        if(topicId == 0){
-            subTopics.add("Two pointers");
-            subTopics.add("Three Pointers");
-            subTopics.add("cyclic sort");
-
-        }
-        else if(topicId == 1){
-            subTopics.add("dfs");
-            subTopics.add("bfs");
-            subTopics.add("dijkstra");
-
-        }
-        return subTopics;
+    public List<String> findSubtopicsForTopic(String topic) {
+        String jpql = "SELECT DISTINCT q.subTopic FROM Question q WHERE q.topic = :topic";
+        TypedQuery<String> query = entityManager.createQuery(jpql, String.class);
+        query.setParameter("topic", topic);
+        List<String> allSubtopicsForTopic = query.getResultList();
+        return allSubtopicsForTopic;
     }
 }
+
