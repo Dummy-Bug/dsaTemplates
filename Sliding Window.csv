@@ -1,0 +1,16 @@
+,,10-line template that can solve most 'substring' problems,https://leetcode.com/problems/minimum-window-substring/solutions/26808/here-is-a-10-line-template-that-can-solve-most-substring-problems/?orderBy=most_votes,
+,,Maximum window template,https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175088/c-maximum-sliding-window-cheatsheet-template/?orderBy=most_votes,
+,,lee's template,https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175090/java-c-python-sliding-window/?orderBy=most_votes,
+,,,,
+Company,Name,Link,Notes,Complexity
+Google,Best Time to Buy And Sell Stock,Best Time to Buy and Sell Stock - LeetCode,"Two pointer,keep one pointer at lowest price yet and keep checking max_profit further days.","O(n) , O(1)"
+Meta,Contains Duplicate II,Contains Duplicate II - LeetCode,Used map to keep track of visited elements.,"O(n) , O(1)"
+Amazon,Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold,Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold - LeetCode,Using fixed size subarray template.,"O(n) , O(1)"
+Outlier,Maximum Number of Vowels in a Substring of Given Length,Maximum Number of Vowels in a Substring of Given Length - LeetCode,"Same as above,using fixed size subarray template.","O(n) , O(1)"
+Microsoft,Permutation in String,Permutation in String - LeetCode,"Same as above,using fixed size substring templates.","O(n) , O(26)"
+"Google,FB,Amazon",Minimum Number of Flips to Make the Binary String Alternating,Minimum Number of Flips to Make the Binary String Alternating - LeetCode,"Same as above,using fixed size substring templates after trick.","O(n) , O(n)"
+Facebook,Longest Substring Without Repeating Characters,Longest Substring Without Repeating Characters - LeetCode,Using maxium window template.Use map.,"O(n) , O(n)"
+Google,Longest Repeating Character Replacement,Longest Repeating Character Replacement - LeetCode,"Same as above,Store count of elements in map. (Length of substring - count of most repeating element).","O(n) , O(26)"
+Facebook,Frequency of the Most Frequent Element,Frequency of the Most Frequent Element - LeetCode,"Same as above,Sort and (long)(j-i+1)*nums[j] - sum > k;","O(nlogn) , O(1)"
+Amazon,Minimum Size Subarray Sum,Minimum Size Subarray Sum - LeetCode,"Same as above, just little changes bcz it is a minimum window question.","O(n) , O(1)"
+Amazon,Find K Closest Elements,Find K Closest Elements - LeetCode,Binary Search + Window. Very tricky. (A[mid] ~ A[mid + k] is sliding window).,"O(log(n-k) + k) , O(k)"
