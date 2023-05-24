@@ -1,39 +1,46 @@
-# dsaTemplates App
+# DSA Templates App API Documentation
 
+## Get All Topics
 
-## Json Entities
+Retrieve all available topics.
 
-### All subjects
+**Endpoint**
 
-```
+### GET /topics
 
+**Response**
+
+- Status Code: 200 OK
+- Content-Type: application/json
+
+```json
 [
     {
-        "subjectId": 1,
-        
-        "subjectTitle": "Arrays",
-        
+        "topicId": 1,
+        "topicTitle": "Arrays",
         "numberOfQuestions": 25
     },
     {
-        "subjectId": 2,
-        
-        "subjectTitle": "Linked Lists",
-        
+        "topicId": 2,
+        "topicTitle": "Linked Lists",
         "numberOfQuestions": 30
     },
     {
-        "subjectId": 3,
-        
-        "subjectTitle": "Backtracking",
-        
+        "topicId": 3,
+        "topicTitle": "Backtracking",
         "numberOfQuestions": 55
     }
 ]
+```
+
+## Error Responses
+- Status Code: 404 Not Found
+- Content-Type: application/json
 
 ```
 
-## API Endpoints
+{
+    "error": "Resource not found"
+}
 
-**GET /subjects**
-> Get all subject/topics available
+```
