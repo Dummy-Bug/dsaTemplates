@@ -1,26 +1,32 @@
 package com.dsa.Template.repository;
 
 import com.dsa.Template.Entity.Question;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class QuestionRepository {
 
-    public List<Question> getAllQuestionsForSubtopic(long topicId, Long subtopicId){
-        List<Question> questionList = new ArrayList<>();
+    @PersistenceContext
+    private EntityManager entityManager;
 
-        if((topicId ==0)&& (subtopicId ==0)){
-            Question question = new Question("Maximum Sum Subarray","Medium");
-            questionList.add(question);
-        }
-        if((topicId ==1)&& (subtopicId ==0)){
-            Question question = new Question("is graphBipartite","Hard");
-            questionList.add(question);
-        }
-    return questionList;
+    public List<Question> getAllQuestionsForSubtopic(String topic,String subTopic){
+        String jpql = "SELECT q FROM Question q WHERE q.topic = :topic AND q.subTopic = :subTopic";
+        TypedQuery<Question> query = entityManager.createQuery(jpql, Question.class);
+        query.setParameter("topic", topic);
+        query.setParameter("subTopic", subTopic);
+        List<Question> questions = query.getResultList();
+        return questions;
+    }
+
+    @Transactional
+    public void save(Question question){
+        entityManager.persist(question);
     }
 
 }
