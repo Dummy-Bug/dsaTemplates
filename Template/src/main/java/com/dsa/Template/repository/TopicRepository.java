@@ -14,7 +14,7 @@ public class TopicRepository {
     private EntityManager entityManager;
 
     public List<String> findAllTopics() {
-        String jpql = "SELECT DISTINCT q.topic FROM Question q";
+        String jpql = "SELECT DISTINCT q.topic FROM questionlist q";
         TypedQuery<String> query = entityManager.createQuery(jpql, String.class);
         List<String> allTopics = query.getResultList();
         return allTopics;

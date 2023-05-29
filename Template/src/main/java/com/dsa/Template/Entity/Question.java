@@ -10,31 +10,28 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Question{
+@Entity(name = "questionlist") // Make sure the entity name matches the table name in MySQL
+public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long questionId;
+    @Column(name = "question_id")
+    private int questionId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String title;
 
-    @Column
-    private String gfgLink;
+    @Column(name = "question_link", length = 255)
+    private String questionLink;
 
-    @Column
-    private String leetCodeLink;
-
-    @Column
+    @Column(name = "solution_link", length = 255)
     private String solutionLink;
 
-    @Column(nullable = false)
+    @Column(length = 255)
     private String topic;
 
-    @Column(nullable = false)
+    @Column(name = "sub_topic", length = 255)
     private String subTopic;
 
-    @Column(nullable = false)
+    @Column(length = 255)
     private String difficulty;
-
 }
