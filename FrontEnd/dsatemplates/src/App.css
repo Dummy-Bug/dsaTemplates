@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+}
+
+.components {
+  background-color: #2f3542; /* Replace #333 with your desired dark color */
+  min-height: 100vh;
+  overflow: auto;
+}

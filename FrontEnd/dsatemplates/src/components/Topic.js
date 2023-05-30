@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import "./Topic.css";
+import { Link } from 'react-router-dom';
 
 const Topic = ({ onSelectTopic }) => {
   const [topics, setTopics] = useState([]);
@@ -24,8 +25,11 @@ const Topic = ({ onSelectTopic }) => {
         {topics.map((topic, index) => (
           <div className="card" 
           key={index} 
-          onClick={() => onSelectTopic(topic)}>
-            <h2>{topic}</h2>
+          onClick={() => onSelectTopic(topic)}
+          >
+            <Link to={`/practiceHub/${topic}`}>
+              <h1>{topic}</h1>
+            </Link>
           </div>
         ))}
       </div>

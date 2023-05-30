@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Topic from "./components/Topic";
 import SubTopic from "./components/SubTopic";
 import Question from "./components/Question";
+import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [topic, setTopic] = useState(null);
@@ -10,37 +13,23 @@ function App() {
   const onSelectTopic = (selectedTopic) => {
     setTopic(selectedTopic);
   };
+
   const onSelectSubTopic = (selectedSubTopic) => {
     setSubTopic(selectedSubTopic);
   };
 
-  if (!topic) {
-    return (
-      <div className="App">
-        <h1>Welcome to dsaTemplates</h1>
-        <Topic onSelectTopic={onSelectTopic} />
+  return (
+    <BrowserRouter>
+      <div className="components" >
+        <Navbar/>
+        <Routes>
+        <Route path="/practiceHub" element={<Topic onSelectTopic={onSelectTopic} />} />
+          <Route path="/practiceHub/:topic" element={<SubTopic topic={topic} onSelectSubTopic={onSelectSubTopic} />} />
+          <Route path="/practiceHub/:topic/:subtopic" element={<Question topic={topic} subTopic={subTopic} />} />
+        </Routes>
       </div>
-    );
-  } else if (!subTopic) {
-    return (
-      <div className="App">
-        <h1>{topic}</h1>
-        <SubTopic
-          topic={topic}
-          onSelectSubTopic={onSelectSubTopic}
-        />
-      </div>
-    );
-  } else {
-    return (
-      <div className="App">
-        <h1>{subTopic}</h1>
-        <Question 
-        topic={topic}
-        subTopic={subTopic}/>
-      </div>
-    );
-  }
+    </BrowserRouter>
+  );
 }
 
 export default App;

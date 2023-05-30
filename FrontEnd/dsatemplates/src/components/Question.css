@@ -1,47 +1,87 @@
-/* Question.css */
+.Questions {
+  margin: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
 .table-container {
-    width: 100%;
-    overflow-x: auto;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .table th,
-  .table td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    color: #000; /* Set text color to black */
-  }
-  
-  .table th {
-    background-color: #f9ca4d; /* Yellowish color */
-    color: #000; /* Set text color to black */
-  }
-  
-  .table tbody tr:nth-child(even) {
-    background-color: #f4e3ac; /* Light yellowish color */
-    color: #000; /* Set text color to black */
-  }
-  
-  .table tbody tr:nth-child(odd) {
-    background-color: #d8c17a; /* Lighter yellowish color */
-    color: #000; /* Set text color to black */
-  }
-  
-  .question-container {
-    background-color: #654062; /* Body color with a bit of purple */
-    color: #fff;
-    padding: 10px;
-  }
-  
-  .leetcode-logo {
-    max-width: 20px;
-    max-height: 20px;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-  
+  background-color: #ced6e0;
+  padding: 33px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  border: 3px solid #333;
+}
+
+.table th {
+  background-color: #2f3542;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table td {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table td a {
+  text-decoration: none;
+  color: #333;
+}
+
+.table td a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.leetcode-logo,
+.github-logo {
+  max-width: 50px;
+  height: auto;
+}
+
+.question-link-column,
+.solution-link-column {
+  width: 10px; /* Adjust the width as needed */
+  white-space: nowrap; /* Prevent line wrapping */
+  overflow: hidden; /* Hide any overflowed content */
+  text-overflow: ellipsis; /* Show ellipsis for truncated content */
+}
+
+/* Apply colors based on difficulty level */
+.table td[data-difficulty="Easy"] {
+  background-color: green;
+  color: white;
+}
+
+.table td[data-difficulty="Medium"] {
+  background-color: yellow;
+}
+
+.table td[data-difficulty="Medium++"] {
+  background-color: orange;
+}
+
+.table td[data-difficulty="Hard"] {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
