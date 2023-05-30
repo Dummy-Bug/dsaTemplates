@@ -1,0 +1,47 @@
+/* Question.css */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #000; /* Set text color to black */
+  }
+  
+  .table th {
+    background-color: #f9ca4d; /* Yellowish color */
+    color: #000; /* Set text color to black */
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f4e3ac; /* Light yellowish color */
+    color: #000; /* Set text color to black */
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #d8c17a; /* Lighter yellowish color */
+    color: #000; /* Set text color to black */
+  }
+  
+  .question-container {
+    background-color: #654062; /* Body color with a bit of purple */
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .leetcode-logo {
+    max-width: 20px;
+    max-height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
