@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Topic from "./components/Topic";
 import SubTopic from "./components/SubTopic";
 import Question from "./components/Question";
+import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [topic, setTopic] = useState(null);
@@ -18,12 +20,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <h1>Welcome to dsaTemplates</h1>
+      <div className="components" >
+        <Navbar/>
         <Routes>
-        <Route path="/" element={<Topic onSelectTopic={onSelectTopic} />} />
-          <Route path="/:topic" element={<SubTopic topic={topic} onSelectSubTopic={onSelectSubTopic} />} />
-          <Route path="/:topic/:subtopic" element={<Question topic={topic} subTopic={subTopic} />} />
+        <Route path="/practiceHub" element={<Topic onSelectTopic={onSelectTopic} />} />
+          <Route path="/practiceHub/:topic" element={<SubTopic topic={topic} onSelectSubTopic={onSelectSubTopic} />} />
+          <Route path="/practiceHub/:topic/:subtopic" element={<Question topic={topic} subTopic={subTopic} />} />
         </Routes>
       </div>
     </BrowserRouter>
