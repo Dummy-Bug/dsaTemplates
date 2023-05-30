@@ -22,12 +22,16 @@ const Question = ({ topic, subTopic }) => {
   const getQuestionLinkElement = (question) => {
     if (question.questionLink.includes("leetcode")) {
       return (
-        <a href={question.questionLink}>
+        <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
           <img src={leetcodeLogo} alt="LeetCode" className="leetcode-logo" />
         </a>
       );
     } else {
-      return <a href={question.questionLink}>Question Link</a>;
+      return (
+        <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
+          Question Link
+        </a>
+      );
     }
   };
 
@@ -49,7 +53,11 @@ const Question = ({ topic, subTopic }) => {
                 <td>{question.title}</td>
                 <td>{getQuestionLinkElement(question)}</td>
                 <td>{question.difficulty}</td>
-                <td><a href={question.solutionLink}>Solution Link</a></td>
+                <td>
+                  <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
+                    Solution Link
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>

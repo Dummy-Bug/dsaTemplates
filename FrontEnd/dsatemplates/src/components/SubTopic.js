@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-// import "./SubTopic.css";
+import { Link } from 'react-router-dom';
 
 const SubTopic = ({ topic, onSelectSubTopic }) => {
   const [subTopics, setSubTopics] = useState([]);
@@ -25,7 +25,11 @@ const SubTopic = ({ topic, onSelectSubTopic }) => {
           <div className="card" 
             key={index} 
             onClick={() => onSelectSubTopic(subTopic)}>
-            <h2>{subTopic}</h2>
+            <Link to={`/${topic}/${subTopic}`}>
+              <h2>
+                {subTopic}
+              </h2>
+            </Link>
           </div>
         ))}
       </div>
