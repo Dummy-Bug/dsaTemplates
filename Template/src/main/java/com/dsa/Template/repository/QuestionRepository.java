@@ -16,7 +16,7 @@ public class QuestionRepository {
     private EntityManager entityManager;
 
     public List<Question> getAllQuestionsForSubtopic(String topic,String subTopic){
-        String jpql = "SELECT q FROM Question q WHERE q.topic = :topic AND q.subTopic = :subTopic";
+        String jpql = "SELECT q FROM questionlist q WHERE q.topic = :topic AND q.subTopic = :subTopic";
         TypedQuery<Question> query = entityManager.createQuery(jpql, Question.class);
         query.setParameter("topic", topic);
         query.setParameter("subTopic", subTopic);
