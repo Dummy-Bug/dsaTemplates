@@ -20,12 +20,13 @@ const Topic = ({ onSelectTopic }) => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="card-container">
+    <div className="topic-container">
+      <div className="topic-card-container">
         {topics.map((topic, index) => (
-          <div className="card" 
-          key={index} 
-          onClick={() => onSelectTopic(topic)}
+          <div
+            className="topic-card"
+            key={index}
+            onClick={() => onSelectTopic(topic)}
           >
             <Link to={`/practiceHub/${topic}`}>
               <h1>{topic}</h1>

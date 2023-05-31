@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import "./SubTopic.css"
+import './SubTopic.css';
 
 const SubTopic = ({ topic, onSelectSubTopic }) => {
   const [subTopics, setSubTopics] = useState([]);
@@ -20,16 +20,12 @@ const SubTopic = ({ topic, onSelectSubTopic }) => {
   }, [topic]);
 
   return (
-    <div className="container">
-      <div className="card-container">
+    <div className="subTopic-container">
+      <div className="subTopic-card-container">
         {subTopics.map((subTopic, index) => (
-          <div className="card" 
-            key={index} 
-            onClick={() => onSelectSubTopic(subTopic)}>
+          <div className="subTopic-card" key={index} onClick={() => onSelectSubTopic(subTopic)}>
             <Link to={`/practiceHub/${topic}/${subTopic}`}>
-              <h1>
-                {subTopic}
-              </h1>
+              <h1>{subTopic}</h1>
             </Link>
           </div>
         ))}

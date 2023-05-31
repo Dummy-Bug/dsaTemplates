@@ -1,36 +1,42 @@
 .navContainer {
   background-color: #ced6e0;
   line-height: 50px;
-  font-size: x-large;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  font-size: large;
+  position: fixed;
+  width: 100%;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 li {
+  margin: 5px;
   float: left;
 }
 
 li a {
-  display: block;
   color: #333;
   text-align: center;
-  padding: 14px 16px;
+  padding: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #b5bcc7;
   color: white;
   border-radius: 10px;
-  height: 50%; /* Set the height to 100% to cover the entire navbar height */
+  height: 50%;
 }
 
+li a.active {
+  background-color: #2f3542;
+  color: white;
+  border-radius: 10px;
+  height: 50%;
+}

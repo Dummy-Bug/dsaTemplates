@@ -1,15 +1,12 @@
 .Questions {
-  margin: 100px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
+  margin: 50px;
+  padding: 1px;
 }
 
 .table-container {
   background-color: #ced6e0;
-  padding: 33px;
-  border-radius: 10px;
   overflow-x: auto;
+  padding-top: 20px; /* Add padding to separate the table from the progress bar */
 }
 
 .table {
@@ -21,25 +18,62 @@
 .table th,
 .table td {
   padding: 10px;
-  text-align: left;
-  font-size: 16px;
   color: #333;
-  border: 3px solid #333;
+  border: 3px solid #b5bcc7;
 }
 
 .table th {
-  background-color: #2f3542;
-  color: white;
+  background-color: #b5bcc7;
+  color: black;
   font-size: 24px;
   font-weight: bold;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  position: unset;
+  padding: 10px;
+  border: 10px solid #b5bcc7;
 }
 
 .table td {
-  font-size: 20px;
   font-weight: bold;
+}
+
+.status-column {
+  width: 5%;
+  text-align: center;
+}
+.status-column input[type="checkbox"] {
+  transform: scale(1.5); /* Increase the scale value to adjust the checkbox size */
+  width: 15px;
+  height: 15px;
+  border-radius: 20%; /* Make the checkbox circular */
+  border: 3px solid #b5bcc7;
+}
+
+.status-column input[type="checkbox"]:checked {
+  background-color:rgb(72, 199, 142); /* Change the background color when the checkbox is checked */
+}
+
+.title-column {
+  font-size: 20px;
+  text-align: left;
+  width: 30%;
+}
+
+.question-column {
+  font-size: 16px;
+  text-align: center;
+  width: 10%;
+}
+
+.difficulty-column {
+  font-size: 20px;
+  text-align: center;
+  width: 10%;
+}
+
+.solution-column {
+  font-size: 16px;
+  text-align: center;
+  width: 10%;
 }
 
 .table td a {
@@ -54,34 +88,44 @@
 
 .leetcode-logo,
 .github-logo {
-  max-width: 50px;
+  max-width: 30px;
   height: auto;
 }
 
-.question-link-column,
-.solution-link-column {
-  width: 10px; /* Adjust the width as needed */
-  white-space: nowrap; /* Prevent line wrapping */
-  overflow: hidden; /* Hide any overflowed content */
-  text-overflow: ellipsis; /* Show ellipsis for truncated content */
+.progress-bar {
+  margin-top: 50px;
+  height: 20px;
+  width: 200px; /* Set a fixed width for the circular progress bar */
+  border-radius: 10px; /* Make the progress bar rounded */
+  background-color:rgb(72, 199, 142);
+  margin-bottom: 20px; /* Add a margin-bottom to separate the progress bar from the table */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Apply colors based on difficulty level */
-.table td[data-difficulty="Easy"] {
-  background-color: green;
-  color: white;
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: rgb(72, 199, 142);
+  transition: width 0.5s ease-in-out; /* Add a smooth transition effect */
+}
+.superman-fly {
+  animation: superman-fly-animation 2s linear infinite;
 }
 
-.table td[data-difficulty="Medium"] {
-  background-color: yellow;
+@keyframes superman-fly-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.table td[data-difficulty="Medium++"] {
-  background-color: orange;
-}
-
-.table td[data-difficulty="Hard"] {
-  background-color: red;
-  color: white;
-  border-radius: 5px;
-}
