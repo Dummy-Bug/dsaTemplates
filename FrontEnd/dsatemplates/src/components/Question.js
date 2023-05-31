@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import "./Question.css";
-import leetcodeLogo from "./leetcode-logo.png";
-import githubLogo from "./github-logo.png";
+import './Question.css';
+import leetcodeLogo from './leetcode-logo.png';
+import githubLogo from './github-logo.png';
 
 const Question = ({ topic, subTopic }) => {
   const [questions, setQuestions] = useState([]);
+  const [checkedQuestions, setCheckedQuestions]     = useState([]);
+  const [progressPercentage, setProgressPercentage] = useState(0);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -21,7 +23,7 @@ const Question = ({ topic, subTopic }) => {
   }, [topic, subTopic]);
 
   const getQuestionLinkElement = (question) => {
-    if (question.questionLink.includes("leetcode")) {
+    if (question.questionLink.includes('leetcode')) {
       return (
         <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
           <img src={leetcodeLogo} alt="LeetCode" className="logo leetcode-logo" />
@@ -37,7 +39,7 @@ const Question = ({ topic, subTopic }) => {
   };
 
   const getSolutionLinkElement = (question) => {
-    if (question.solutionLink.includes("github")) {
+    if (question.solutionLink.includes('github')) {
       return (
         <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
           <img src={githubLogo} alt="GitHub" className="logo github-logo" />
@@ -52,29 +54,67 @@ const Question = ({ topic, subTopic }) => {
     }
   };
 
+  const handleCheckboxChange = (question) => {
+    const isChecked = checkedQuestions.includes(question);
+  
+    let updatedCheckedQuestions = [];
+  
+    if (isChecked) {
+      updatedCheckedQuestions = checkedQuestions.filter((q) => q !== question);
+    } else {
+      updatedCheckedQuestions = [...checkedQuestions, question];
+    }
+  
+    setCheckedQuestions(updatedCheckedQuestions);
+  };
+  
+  useEffect(() => {
+    const progressPercentage = (checkedQuestions.length / questions.length) * 100;
+  
+    if (progressPercentage === 100) {
+      // Tdo --> Make the batman fly
+    } else {
+      setProgressPercentage(progressPercentage);
+    }
+  }, [checkedQuestions, questions]);
+  
+
   return (
     <div className="Questions">
+      <div className="progress-bar" 
+        style={{ width: `${progressPercentage}%` }}>
+      </div>
       <div className="table-container">
         <table className="table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Question</th>
-              <th>Difficulty</th>
-              <th>Code</th>
+              <th className="status-column">Status</th>
+              <th className="title-column">Title</th>
+              <th className="question-column">Problem</th>
+              <th className="difficulty-column">Level</th>
+              <th className="solution-column">Code</th>
             </tr>
           </thead>
           <tbody>
-  {questions.map((question, index) => (
-    <tr key={index}>
-      <td>{question.title}</td>
-      <td className="question-link-column">{getQuestionLinkElement(question)}</td>
-      <td data-difficulty={question.difficulty}>{question.difficulty}</td>
-      <td className="solution-link-column">{getSolutionLinkElement(question)}</td>
-    </tr>
-  ))}
-</tbody>
-
+            {questions.map((question, index) => (
+              <tr key={index}>
+                <td className="status-column">
+                  <input
+                    type="checkbox"
+                    id={`checkbox-${index}`}
+                    onChange={() => handleCheckboxChange(question)}
+                  />
+                  <label htmlFor={`checkbox-${index}`}></label>
+                </td>
+                <td className="title-column">{question.title}</td>
+                <td className="question-column">{getQuestionLinkElement(question)}</td>
+                <td className="difficulty-column" data-difficulty={question.difficulty}>
+                  {question.difficulty}
+                </td>
+                <td className="solution-column">{getSolutionLinkElement(question)}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

@@ -1,27 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navContainer">
+    <div className="navContainer">
       <ul>
         <li>
-          <Link to="/">MockDude</Link>
+          <NavLink exact to="/" activeClassName="active">
+            MockDude
+          </NavLink>
         </li>
         <li>
-          <Link to="/practiceHub">PracticeHub</Link>
+          <NavLink to="/practiceHub" activeClassName="active">
+            PracticeHub
+          </NavLink>
         </li>
         <li>
           <a href="/">Contact</a>
         </li>
         <li style={{ float: 'right' }}>
-          <a className="active" href="#about">
-            Sign In
-          </a>
+          <a href="/">Sign In</a>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 

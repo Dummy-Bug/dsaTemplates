@@ -1,17 +1,17 @@
-.container {
+.topic-container {
   margin: 100px;
   padding: 10px;
   display: flex;
   justify-content: center;
 }
 
-.card-container {
+.topic-card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
 }
 
-.card {
+.topic-card {
   background-color: #ced6e0;
   padding: 20px;
   text-align: center;
@@ -19,14 +19,15 @@
   border-radius: 10px;
 }
 
-.card a {
+.topic-card a {
   text-decoration: none;
 }
 
-.card:hover {
+.topic-card:hover {
   background-color: black;
 }
-.card:hover h1 {
+
+.topic-card:hover h1 {
   color: white;
 }
 
