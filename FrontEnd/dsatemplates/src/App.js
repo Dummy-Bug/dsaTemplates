@@ -5,6 +5,7 @@ import SubTopic from "./components/SubTopic";
 import Question from "./components/Question";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [topic, setTopic] = useState(null);
@@ -19,11 +20,12 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <div className="components" >
         <Navbar/>
         <Routes>
-        <Route path="/practiceHub" element={<Topic onSelectTopic={onSelectTopic} />} />
+          <Route path="/" element={<LandingPage/>} />
+          <Route path="/practiceHub" element={<Topic onSelectTopic={onSelectTopic} />} />
           <Route path="/practiceHub/:topic" element={<SubTopic topic={topic} onSelectSubTopic={onSelectSubTopic} />} />
           <Route path="/practiceHub/:topic/:subtopic" element={<Question topic={topic} subTopic={subTopic} />} />
         </Routes>
