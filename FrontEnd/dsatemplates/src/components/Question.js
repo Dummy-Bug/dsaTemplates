@@ -27,7 +27,7 @@ const Question = ({ topic, subTopic }) => {
     if (question.questionLink.includes('leetcode')) {
       return (
         <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
-          <img src={leetcodeLogo} alt="LeetCode" className="logo leetcode-logo" />
+          <img src={leetcodeLogo} alt="LeetiCode" className="logo leetcode-logo" />
         </a>
       );
     }
