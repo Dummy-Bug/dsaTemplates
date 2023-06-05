@@ -1,11 +1,12 @@
 .subTopic-container {
-  margin: 200px;
+  margin-top: 100px;
   padding: 10px;
   display: flex;
   justify-content: center;
 }
 
 .subTopic-card-container {
+  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -20,7 +21,7 @@
   border-radius: 10px;
   height: 60px;
   width: 300px; /* Increase the width by 10px */
-  margin-bottom: 50px; /* Add margin-bottom to create space between cards */
+  margin-bottom: 0px; /* Add margin-bottom to create space between cards */
 }
 
 .subTopic-card h1 {

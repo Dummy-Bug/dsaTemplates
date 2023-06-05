@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import "./Topic.css";
 import { Link } from 'react-router-dom';
+import array from "./array.png";
 
 const Topic = ({ onSelectTopic }) => {
   const [topics, setTopics] = useState([]);
@@ -29,7 +30,12 @@ const Topic = ({ onSelectTopic }) => {
             onClick={() => onSelectTopic(topic)}
           >
             <Link to={`/practiceHub/${topic}`}>
-              <h1>{topic}</h1>
+            <div className='topic-icon'>
+              <img  src={array} className='topic-pic'/>
+              </div>
+              <div className='topic-title'>
+                <p className='topic-title-text'>{topic}</p>
+                </div>
             </Link>
           </div>
         ))}
