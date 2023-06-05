@@ -88,7 +88,7 @@ const Question = ({ topic, subTopic }) => {
     const progressPercentage = (checkedQuestions.length / questions.length) * 100;
   
     if (progressPercentage === 100) {
-      // Tdo --> Make the batman fly
+      setProgressPercentage(progressPercentage);
     } else {
       setProgressPercentage(progressPercentage);
     }
