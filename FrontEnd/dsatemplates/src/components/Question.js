@@ -25,14 +25,14 @@ const Question = ({ topic, subTopic }) => {
   }, [topic, subTopic]);
   
   const getQuestionLinkElement = (question) => {
-    if (question.questionLink.includes('interviewbit')) {
+    if (question.questionLink.includes('leetcode')) {
       return (
         <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
           <img src={leetcodeLogo} alt="LeetCode" className="logo leetcode-logo" />
         </a>
       );
     }
-    else if (question.questionLink.includes('geeksforgeeks')) {
+    else if (question.questionLink.includes('interviewbit')) {
       return (
         <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
           <img src={interviewBit} alt="InterviewBit" className="logo interviewBit-logo" />
