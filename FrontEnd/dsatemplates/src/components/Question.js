@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './Question.css';
 import leetcodeLogo from './leetcode-logo.png';
 import githubLogo from './github-logo.png';
-import gfgLogo from "./gfg-logo.png";
+import gfgLogo from "./gfg.png";
+import interviewBit from "./interviewBit.png";
 
 const Question = ({ topic, subTopic }) => {
   const [questions, setQuestions] = useState([]);
@@ -24,10 +25,17 @@ const Question = ({ topic, subTopic }) => {
   }, [topic, subTopic]);
   
   const getQuestionLinkElement = (question) => {
-    if (question.questionLink.includes('leetcode')) {
+    if (question.questionLink.includes('interviewbit')) {
       return (
         <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
-          <img src={leetcodeLogo} alt="LeetiCode" className="logo leetcode-logo" />
+          <img src={leetcodeLogo} alt="LeetCode" className="logo leetcode-logo" />
+        </a>
+      );
+    }
+    else if (question.questionLink.includes('geeksforgeeks')) {
+      return (
+        <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
+          <img src={interviewBit} alt="InterviewBit" className="logo interviewBit-logo" />
         </a>
       );
     }
