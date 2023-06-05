@@ -6,7 +6,7 @@
 .table-container {
   background-color: #ced6e0;
   overflow-x: auto;
-  padding-top: 20px; /* Add padding to separate the table from the progress bar */
+  padding-top: 0px;
 }
 
 .table {
@@ -66,7 +66,7 @@
 
 .difficulty-column {
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   width: 10%;
 }
 
@@ -95,7 +95,7 @@
 
 .progress-bar {
   margin-top: 50px;
-  height: 20px;
+  height: 10px;
   width: 200px; /* Set a fixed width for the circular progress bar */
   border-radius: 10px; /* Make the progress bar rounded */
   background-color:rgb(72, 199, 142);
