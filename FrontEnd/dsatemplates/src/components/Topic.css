@@ -1,5 +1,5 @@
 .topic-container {
-  margin: 100px;
+  margin-top: 140px;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -10,29 +10,54 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
 }
-
 .topic-card {
-  background-color: #ced6e0;
-  padding: 20px;
+  background-color:  rgb(137, 94, 37);
   text-align: center;
   cursor: pointer;
-  border-radius: 10px;
+  height: 200px;
+  width: 250px;
+  border-radius: 15px;
 }
 
 .topic-card a {
   text-decoration: none;
 }
 
+.topic-icon {
+  height: 160px;
+  background-color: #ced6e0;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.topic-pic{
+  margin-top: 40px;
+  max-width: 90px;
+  height: 85px;
+}
+
+.topic-title-text{
+  padding: 5px;
+  height: 31px;
+  text-decoration: none;
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: black;
+}
+
 .topic-card:hover {
   background-color: black;
 }
 
-.topic-card:hover h1 {
-  color: white;
+.topic-icon:hover{
+  background-color: black;
 }
 
-h1 {
-  margin: 0;
-  font-size: 40px;
-  color: #333;
+.topic-card:hover .topic-title-text {
+  color: black
+}
+
+.topic-card:active .topic-title-text {
+  color: blue;
 }

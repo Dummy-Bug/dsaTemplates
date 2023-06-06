@@ -17,7 +17,9 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <a href="/">Contact</a>
+          <NavLink to ="/Community" activeClassName="active">
+            Community
+            </NavLink>
         </li>
         <li style={{ float: 'right' }}>
           <a href="/">Sign In</a>

@@ -1,0 +1,44 @@
+.home {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 50vh; */
+}
+
+.home h1 {
+    color: aliceblue;
+    font-size: 32px;
+    font-weight: 50000;
+}
+
+.home p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.home1 {
+    margin-top: 60px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.home2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.home2 p{
+    margin-bottom: 10px;
+}
+  
+.home2 .pic1 {
+    max-width: 600px;
+
+}
