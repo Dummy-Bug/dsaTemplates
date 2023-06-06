@@ -5,12 +5,14 @@ import './SubTopic.css';
 
 const SubTopic = ({ topic, onSelectSubTopic }) => {
   const [subTopics, setSubTopics] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchSubTopics = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/topics/${topic}`);
         setSubTopics(response.data);
+        setLoading(false); // Set loading to false once the data is fetched
       } catch (error) {
         console.log(error);
       }
@@ -18,6 +20,11 @@ const SubTopic = ({ topic, onSelectSubTopic }) => {
 
     fetchSubTopics();
   }, [topic]);
+
+
+  if (loading) {
+    return <p>Loading...</p>; // Render a loading state while fetching data
+  }
 
   return (
     <div className="subTopic-container">

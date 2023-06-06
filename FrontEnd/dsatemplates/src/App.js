@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Topic from "./components/Topic";
 import SubTopic from "./components/SubTopic";
@@ -12,11 +12,24 @@ function App() {
   const [topic, setTopic] = useState(null);
   const [subTopic, setSubTopic] = useState(null);
 
+  useEffect(() => {
+    const storedTopic = JSON.parse(localStorage.getItem('topic'));
+    if (storedTopic) {
+      onSelectTopic(storedTopic);
+    }
+    const storedSubTopic = JSON.parse(localStorage.getItem('subTopic'))
+    if (setSubTopic){
+      onSelectSubTopic(storedSubTopic);
+    }
+  }, []);
+
   const onSelectTopic = (selectedTopic) => {
+    localStorage.setItem('topic', JSON.stringify(selectedTopic));
     setTopic(selectedTopic);
   };
 
   const onSelectSubTopic = (selectedSubTopic) => {
+    localStorage.setItem('subTopic', JSON.stringify(selectedSubTopic));
     setSubTopic(selectedSubTopic);
   };
 

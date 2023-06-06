@@ -7,6 +7,8 @@ import array from "./array.png";
 const Topic = ({ onSelectTopic }) => {
   const [topics, setTopics] = useState([]);
   
+
+
   useEffect(() => {
     const fetchTopics = async () => {
       try {
@@ -31,7 +33,7 @@ const Topic = ({ onSelectTopic }) => {
           >
             <Link to={`/practiceHub/${topic}`}>
             <div className='topic-icon'>
-              <img  src={array} className='topic-pic'/>
+              <img  src={array} className='topic-pic' alt={topic}/>
               </div>
               <div className='topic-title'>
                 <p className='topic-title-text'>{topic}</p>
