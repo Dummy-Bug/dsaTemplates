@@ -66,12 +66,9 @@ const LandingPage = () => {
                 </div>
 
                 <div className="homeRight">
-                    <p className='pic1Text'>Topic Wise content</p>
-                    <img src={topics_pic} alt="Hustle Hard" className="pic1" />
-                    <p className='pic2Text'>Glimpse of templates</p>
-                    <img src={pic1} alt="Practice Hard" className="pic1" />
-                    <p className='pic3Text'>Progress Tracker</p>
-                    <img src={list_pic2} alt="Play Hard" className="pic1" />
+                    <img src={topics_pic} alt="Hustle Hard" className= "pic1" />
+                    <img className= "pic1" src={pic1} alt="Practice Hard"  />
+                    <img className= "pic3" src={list_pic2} alt="Play Hard"  />
                 </div>
             </div>
         </div>
