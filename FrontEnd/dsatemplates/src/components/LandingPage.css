@@ -1,44 +1,90 @@
-.home {
+.homeHeading {
     margin-top: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* height: 50vh; */
 }
 
-.home h1 {
+.homeHeading h1 {
     color: aliceblue;
     font-size: 32px;
     font-weight: 50000;
 }
 
-.home p {
+.homeHeading p {
     color: #555;
     font-size: 18px;
     line-height: 1.5;
     text-align: center;
 }
 
-.home1 {
-    margin-top: 60px;
+.homeTagLine {
+    margin: 50px 0;
+    color: #8066ff;
     font-weight: bolder;
-    display: flex;
-    justify-content: flex-start;
+    text-align: center;
+    font-size: 25px;
 }
 
-.home2 {
+.contentWrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
 }
 
-.home2 p{
-    margin-bottom: 10px;
+.homeLeft {
+    flex: 1 1 20%;
+    /* margin-right: 30px; */
+    margin-top: 90px;  
 }
-  
-.home2 .pic1 {
+
+.homeLeft .title{
+    color: #ab9aff;
+    margin-left: 150px;
+    font-weight: bolder;
+    font-size: 20px;
+    /* margin-bottom: 100px; */
+}
+
+.list{
+    margin-top: 20px;
+    list-style-type: disc;
+    color: black;
+    background-color: aliceblue;
+    margin-left: 180px;
+}
+
+.topicText{
+    width: 400px;
+    height: 436px;
+}
+
+.subTopicText{
+    width: 400px;
+    height: 295px;
+}
+
+.progressText{
+    width: 400px;
+}
+
+.homeRight{
+    flex: 1 1 80%;
+    margin-top: 50px;
+}
+
+.homeRight,
+.pic1 {
     max-width: 600px;
+    height: auto;
+    margin-bottom: 100px;
+    margin-right: 50px;
+}
 
+.pic1Text,
+.pic2Text,
+.pic3Text{
+    text-align: center;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: bolder;
 }
