@@ -21,70 +21,65 @@
 
 .homeTagLine {
     margin: 50px 0;
-    color: #8066ff;
+    color: #c3bfdbcc;
     font-weight: bolder;
     text-align: center;
     font-size: 25px;
 }
 
-.contentWrapper {
+.container {
+    margin: 100px 0;
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.homeLeft {
-    flex: 1 1 20%;
-    /* margin-right: 30px; */
-    margin-top: 90px;  
+.center-image{
+    width: 50%;
 }
 
-.homeLeft .title{
-    color: #ab9aff;
-    margin-left: 150px;
+.image-container:hover .center-image {
+    transform: translateX(50%);
+}
+
+.image-container:hover .text-container {
+    opacity: 1;
+}
+
+.image-container img {
+    transition: transform 0.5s ease;
+}
+
+.text-container {
+    position: absolute;
+    margin-top: 30px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.text{
+    color: #859fbd;
+    margin-left: 20px;
     font-weight: bolder;
-    font-size: 20px;
-    /* margin-bottom: 100px; */
 }
 
-.list{
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.list li{
     margin-top: 20px;
     list-style-type: disc;
-    color: black;
-    background-color: aliceblue;
-    margin-left: 180px;
-}
-
-.topicText{
-    width: 400px;
-    height: 436px;
-}
-
-.subTopicText{
-    width: 400px;
-    height: 295px;
-}
-
-.progressText{
-    width: 400px;
-}
-
-.homeRight{
-    flex: 1 1 80%;
-    margin-top: 50px;
-}
-
-.homeRight,
-.pic1 {
-    max-width: 600px;
-    height: auto;
-    margin-bottom: 100px;
-    margin-right: 50px;
-}
-
-.pic1Text,
-.pic2Text,
-.pic3Text{
-    text-align: center;
-    color: #555;
-    margin-bottom: 10px;
-    font-weight: bolder;
+    color: #ced6e0;
+    margin-left: 100px;
 }
