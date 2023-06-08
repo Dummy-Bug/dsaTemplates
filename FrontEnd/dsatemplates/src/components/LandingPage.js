@@ -16,37 +16,51 @@ const LandingPage = () => {
                 <p>DSA Question Templates: Empowering Your Preparation, Your Roadmap to Problem Solving Proficiency.</p>
             </div>
 
-            <div className='contentWrapper'>
-                <div className="homeLeft">
-                    <div className='topicText'>
-                        <p className='title'>Master Data Structures and Algorithms Topics with Targeted Practice Questions.</p>
-                        <div className='list'>
-                            <ol>
-                                <li>
-                                    Strengthen understanding with focused practice questions.
-                                </li>
-                                <li>
-                                    Achieve proficiency in data structures and algorithms topics.
-                                </li>
-                                <li>
-                                    Prepare effectively with topic-wise practice questions.
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                    <p className='title'>Explore subtopics based on templates to enhance your problem-solving abilities.</p>
-                    <p className='title'>Effortlessly Monitor Your DSA Progress with Interactive Question Tracking.</p>
-                </div>
 
-                <div className="homeRight">
-                    <p className='pic1Text'>Topic Wise content</p>
-                    <img src={topics_pic} alt="Hustle Hard" className="pic1" />
-                    <p className='pic2Text'>Glimpse of templates</p>
-                    <img src={pic1} alt="Practice Hard" className="pic1" />
-                    <p className='pic3Text'>Progress tracker</p>
-                    <img src={list_pic2} alt="Play Hard" className="pic1" />
+            <div className='container'>
+                <div className='image-container'>
+                    
+                    <img src={topics_pic} alt="Hustle Hard" className="center-image" />
+                    <div className="text-container">
+                        <p className='text'>Master Data Structures and Algorithms Topics with Targeted Practice Questions.</p>
+                        <ol className='list'>
+                            <li>Prepare effectively with topic-wise practice questions.</li>
+                            <li>Strengthen understanding with focused practice questions.</li>
+                            <li>Achieve proficiency in data structures and algorithms topics.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
+
+            <div className='container'>
+                <div className='image-container'>
+                    <img src={pic1} alt="Practice Hard" className="center-image" />
+                    <div className="text-container">
+                        <p className='text'>Explore subtopics based on templates to enhance your problem-solving abilities.</p>
+                        <ol className='list'>
+                            <li>Explore specific techniques with subtopic-based learning.</li>
+                            <li>Master subtopics with templates to improve DSA skills.</li>
+                            <li>Develop coding interview skills with templates.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div className='container'>
+                <div className='image-container'>
+                    <img src={list_pic2} alt="Play Hard" className="center-image" />
+                    <div className="text-container">
+                        <p className='text'>Effortlessly Monitor Your DSA Progress with Interactive Question Tracking.</p>
+                        <ol className='list'>
+                            <li>Easily monitor and track your DSA progress.</li>
+                            <li>Interactive question tracking for better monitoring.</li>
+                            <li>Fuel your motivation by monitoring your progress.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     );
 };
