@@ -6,6 +6,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import LandingPage from "./components/LandingPage";
 import Community from "./components/Community";
+import Footer from "./components/Footer";
 
 function App() {
   const [topic, setTopic] = useState(null);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/practiceHub" element={<Topic onSelectTopic={onSelectTopic} />} />
           <Route path="/practiceHub/:topic" element={<SubTopic topic={topic} />} />
         </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
   );
