@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
     return(
         <div className="footerContainer">
-            <p>i am footer hehe</p>
+            <p>Copyright © 2023 codebetter.com All rights reserved.</p>
         </div>
     );
 };
