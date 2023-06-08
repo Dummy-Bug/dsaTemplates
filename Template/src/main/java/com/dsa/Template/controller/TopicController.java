@@ -13,9 +13,11 @@ import java.util.List;
 @RequestMapping("/topics")
 @CrossOrigin(origins = "http://localhost:3000")
 public class TopicController {
+
+
         @Autowired
         private TopicService topicService;
-        @GetMapping
+        @GetMapping()
         public List<String> getAllTopics() {
             return topicService.getAllTopics();
         }

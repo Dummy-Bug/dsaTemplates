@@ -1,38 +1,42 @@
 .subTopic-container {
-  margin-top: 150px;
-  padding: 10px;
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
 }
 
 .subTopic-card-container {
-  
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* justify-content: center; */
-  gap: 50px;
+  margin-top: 80px;
+  flex: 1 1 20%;
+  margin-right: 20px;
+}
+
+.question-container {
+  flex: 1 1 80%;
+  margin-top: 80px;
 }
 
 .subTopic-card {
   margin-top: 50px;
   background-color: #ced6e0;
-  padding-top: 30px;
-  text-align: center;
   cursor: pointer;
-  border-radius: 10px;
-  height: 60px;
-  width: 300px; /* Increase the width by 10px */
-  margin-bottom: 0px; /* Add margin-bottom to create space between cards */
+  border-radius: 20px;
+  height: 50px;
+  width: 190px; /* Increase the width by 10px */ 
 }
+
 
 .subTopic-card h1 {
   margin: 0;
-  font-size: 24px;
-  color: #333;
+  font-size: 20px;
+  display: flex;
+  justify-content: center; /* Center the text horizontally */
+  line-height: 50px;
 }
 
-.subTopic-card:hover {
+.subTopic-card.active{
   background-color: black;
+  color: white;
+}
+.subTopic-card:hover {
+  background-color: #b5bcc7;
 }
 
 .subTopic-card a {

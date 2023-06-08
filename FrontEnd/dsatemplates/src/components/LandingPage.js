@@ -13,36 +13,15 @@ const LandingPage = () => {
             </div>
 
             <div className='homeTagLine'>
-                <p>DSA Question Templates: Empowering Your Preparation, Your Roadmap to Problem Solving Proficiency.</p>
+                <p>DSA Question Templates: Empowering Your Preparation, Your Roadmap to improve Problem Solving Proficiency</p>
             </div>
-
-
-            <div className='container'>
-                <div className='image-container'>
-                    
-                    <img src={topics_pic} alt="Hustle Hard" className="center-image" />
-                    <div className="text-container">
-                        <p className='text'>Master Data Structures and Algorithms Topics with Targeted Practice Questions.</p>
-                        <ol className='list'>
-                            <li>Prepare effectively with topic-wise practice questions.</li>
-                            <li>Strengthen understanding with focused practice questions.</li>
-                            <li>Achieve proficiency in data structures and algorithms topics.</li>
-                        </ol>
+master
                     </div>
                 </div>
             </div>
 
-            <div className='container'>
-                <div className='image-container'>
-                    <img src={pic1} alt="Practice Hard" className="center-image" />
-                    <div className="text-container">
-                        <p className='text'>Explore subtopics based on templates to enhance your problem-solving abilities.</p>
-                        <ol className='list'>
-                            <li>Explore specific techniques with subtopic-based learning.</li>
-                            <li>Master subtopics with templates to improve DSA skills.</li>
-                            <li>Develop coding interview skills with templates.</li>
-                        </ol>
-                    </div>
+
+master
                 </div>
             </div>
 

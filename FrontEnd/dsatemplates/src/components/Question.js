@@ -7,8 +7,9 @@ import gfgLogo from "./gfg.png";
 import interviewBit from "./interviewBit.png";
 
 const Question = ({ topic, subTopic }) => {
+
   const [questions, setQuestions] = useState([]);
-  const [checkedQuestions, setCheckedQuestions]     = useState([]);
+  const [checkedQuestions, setCheckedQuestions]  = useState([]);
   const [progressPercentage, setProgressPercentage] = useState(0);
 
   useEffect(() => {
@@ -16,60 +17,14 @@ const Question = ({ topic, subTopic }) => {
       try {
         const response = await axios.get(`http://localhost:8080/topics/${topic}/${subTopic}`);
         setQuestions(response.data);
+        console.log(response.data)
       } catch (error) {
         console.log(error);
       }
     };
-
     fetchQuestions();
   }, [topic, subTopic]);
   
-  const getQuestionLinkElement = (question) => {
-    if (question.questionLink.includes('leetcode')) {
-      return (
-        <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
-          <img src={leetcodeLogo} alt="LeetCode" className="logo leetcode-logo" />
-        </a>
-      );
-    }
-    else if (question.questionLink.includes('interviewbit')) {
-      return (
-        <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
-          <img src={interviewBit} alt="InterviewBit" className="logo interviewBit-logo" />
-        </a>
-      );
-    }
-    else if (question.questionLink.includes('geeksforgeeks')) {
-      return (
-        <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
-          <img src={gfgLogo} alt="geeksforgeeks" className="logo gfg-logo" />
-        </a>
-      );
-    } else {
-      return (
-        <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
-          Question Link
-        </a>
-      );
-    }
-  };
-
-  const getSolutionLinkElement = (question) => {
-    if (question.solutionLink.includes('github')) {
-      return (
-        <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
-          <img src={githubLogo} alt="GitHub" className="logo github-logo" />
-        </a>
-      );
-    } else {
-      return (
-        <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
-          Solution Link
-        </a>
-      );
-    }
-  };
-
   const handleCheckboxChange = (question) => {
     const isChecked = checkedQuestions.includes(question);
   
@@ -80,26 +35,24 @@ const Question = ({ topic, subTopic }) => {
     } else {
       updatedCheckedQuestions = [...checkedQuestions, question];
     }
-  
     setCheckedQuestions(updatedCheckedQuestions);
   };
-  
-  useEffect(() => {
+  const calculateProgressPercentage = () => {
+
     const progressPercentage = (checkedQuestions.length / questions.length) * 100;
-  
-    if (progressPercentage === 100) {
-      setProgressPercentage(progressPercentage);
-    } else {
-      setProgressPercentage(progressPercentage);
-    }
+    console.log(checkedQuestions.length,questions.length);
+    console.log(progressPercentage)
+    return progressPercentage;
+  };  
+  useEffect(() => {
+    const progressPercentage = calculateProgressPercentage();
+    setProgressPercentage(progressPercentage);
   }, [checkedQuestions, questions]);
   
 
   return (
     <div className="Questions">
-      <div className="progress-bar" 
-        style={{ width: `${progressPercentage}%` }}>
-      </div>
+      <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
       <div className="table-container">
         <table className="table">
           <thead>
@@ -112,15 +65,15 @@ const Question = ({ topic, subTopic }) => {
             </tr>
           </thead>
           <tbody>
-            {questions.map((question, index) => (
-              <tr key={index}>
+            {questions.map((question) => (
+              <tr key={question.questionId}>
                 <td className="status-column">
                   <input
                     type="checkbox"
-                    id={`checkbox-${index}`}
+                    id={`checkbox-${question.questionId}`}
                     onChange={() => handleCheckboxChange(question)}
                   />
-                  <label htmlFor={`checkbox-${index}`}></label>
+                  <label htmlFor={`checkbox-${question.questionId}`}></label>
                 </td>
                 <td className="title-column">{question.title}</td>
                 <td className="question-column">{getQuestionLinkElement(question)}</td>
@@ -136,5 +89,51 @@ const Question = ({ topic, subTopic }) => {
     </div>
   );
 };
-
 export default Question;
+
+
+const getQuestionLinkElement = (question) => {
+  if (question.questionLink.includes('leetcode')) {
+    return (
+      <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
+        <img src={leetcodeLogo} alt="LeetCode" className="logo leetcode-logo" />
+      </a>
+    );
+  }
+  else if (question.questionLink.includes('interviewbit')) {
+    return (
+      <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
+        <img src={interviewBit} alt="InterviewBit" className="logo interviewBit-logo" />
+      </a>
+    );
+  }
+  else if (question.questionLink.includes('geeksforgeeks')) {
+    return (
+      <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
+        <img src={gfgLogo} alt="geeksforgeeks" className="logo gfg-logo" />
+      </a>
+    );
+  } else {
+    return (
+      <a href={question.questionLink} target="_blank" rel="noopener noreferrer">
+        Question Link
+      </a>
+    );
+  }
+};
+
+const getSolutionLinkElement = (question) => {
+  if (question.solutionLink.includes('github')) {
+    return (
+      <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
+        <img src={githubLogo} alt="GitHub" className="logo github-logo" />
+      </a>
+    );
+  } else {
+    return (
+      <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
+        Solution Link
+      </a>
+    );
+  }
+};
