@@ -20,71 +20,32 @@
     text-align: center;
 }
 
-.homeTagLine {
-    margin-top: 70px;
-    margin-left: 96px;
-    margin-right: 169px;
-    color: #ced6e0;
+
+master
     font-weight: bolder;
     text-align: center;
     font-size: 30px;
 }
 
-.contentWrapper {
-    display: flex;
+.container {
+    margin: 100px 0;
+    width: 100%;
 }
 
-.homeLeft {
-    flex: 1 1 20%;
-    margin-top: 90px;  
+
+.text-container {
+    position: absolute;
+    margin-top: 30px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.topicText{
-    height: 436px;
-}
-.homeLeft .title{
-    color: #b45959;
-    margin-left: 115px;
-    margin-right: 30px;
+.text{
+    color: #859fbd;
+    margin-left: 20px;
     font-weight: bolder;
-    font-size: 20px;
-
 }
-
-.list{
-    margin-top: 20px;
-    list-style-type: disc;
-    color: #ced6e0;
-    background-color: aliceblue;
-    margin-left: 140px;
-    margin-right: 40px;
-}
-
-.subTopicText{
-    height: 295px;
-}
-
-.progressText{
-    width: 400px;
-}
-
-.homeRight{
-    flex: 1 1 80%;
-    margin-top: 50px;
-}
-
-.homeRight,
-.pic1 {
-    margin-top: 43px;
-    max-width: 600px;
-    height: auto;
-    margin-bottom: 75px;
-    margin-right: 50px;
-}
-.pic3 {
-    margin-top: 60px;
-    max-width: 600px;
-    height: auto;
-    margin-bottom: 75px;
-    margin-right: 50px;
+master
 }
