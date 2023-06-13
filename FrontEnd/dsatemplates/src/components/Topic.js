@@ -1,26 +1,62 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import React, { useState, useEffect } from 'react';
 import "./Topic.css";
 import { Link } from 'react-router-dom';
-import array from "./array.png";
+import arrayImg from "./images/array.png";
+import matrixImg from "./images/matrix.png";
+import recursionImg from "./images/recursion.png";
+import sortingGif from "./images/sorting.png";
+import binarySearchImg from "./images/binary-search.png";
+import listImg from "./images/linked-list.png";
+import hashmapImg from "./images/hashmap.png";
+import treeImg from "./images/tree.png";
+import graphImg from "./images/graph.png";
+import slidingImg from "./images/sliding-window.png";
+import backtrackingImg from "./images/backtracking.png";
+import dynamicImg from "./images/dynamic-programming.png";
+import stackImg from "./images/stack.png";
+import queueImg from "./images/queue.png";
+import greedyImg from "./images/greedy.png";
+import heapImg from "./images/heap.png";
 
 const Topic = ({ onSelectTopic }) => {
-  const [topics, setTopics] = useState([]);
+  // const [topics, setTopics] = useState([]);
   
+  const topics = ['Array','Matrix','Recursion','Sorting','Binary Search','Linked List',
+                  'Hashmap','Stack','Queue','Graph','Tree','Sliding Window',
+                  'Heap','Greedy','Backtracking','Dynamic Programming'];
 
+  const topicImages = {
+    Array: arrayImg,
+    Matrix: matrixImg,
+    Recursion: recursionImg,
+    Graph: graphImg,
+    Tree: treeImg,
+    "Linked List": listImg,
+    Hashmap: hashmapImg,
+    Sorting: sortingGif,
+    "Sliding Window": slidingImg,
+    Backtracking: backtrackingImg,
+    "Binary Search": binarySearchImg,
+    "Dynamic Programming": dynamicImg,
+    Stack: stackImg,
+    Queue: queueImg,
+    Greedy: greedyImg,
+    Heap: heapImg
+  };
 
-  useEffect(() => {
-    const fetchTopics = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/topics');
-        setTopics(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchTopics = async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:8080/topics');
+  //       setTopics(response.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    fetchTopics();
-  }, []);
+  //   fetchTopics();
+  // }, []);
 
   return (
     <div className="topic-container">
@@ -33,7 +69,7 @@ const Topic = ({ onSelectTopic }) => {
           >
             <Link to={`/practiceHub/${topic}`}>
             <div className='topic-icon'>
-              <img  src={array} className='topic-pic' alt={topic}/>
+              <img  src={topicImages[topic]} className='topic-pic' alt={topic}/>
               </div>
               <div className='topic-title'>
                 <p className='topic-title-text'>{topic}</p>

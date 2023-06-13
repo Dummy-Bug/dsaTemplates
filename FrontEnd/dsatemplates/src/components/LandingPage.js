@@ -1,8 +1,8 @@
 import React from 'react';
 import "./LandingPage.css";
-import pic1 from "./subTopics_pic.jpeg";
-import list_pic2 from "./list_pic2.jpeg";
-import topics_pic from "./topics_pic.jpeg";
+import pic1 from "./images/subTopics_pic.jpeg";
+import list_pic2 from "./images/list_pic2.jpeg";
+import topics_pic from "./images/topics_pic.jpeg";
 
 const LandingPage = () => {
     return (

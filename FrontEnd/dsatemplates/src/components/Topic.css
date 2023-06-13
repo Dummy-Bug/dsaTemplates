@@ -47,11 +47,11 @@
 }
 
 .topic-card:hover {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 .topic-icon:hover{
-  background-color: black;
+  background-color: rgb(102, 102, 102);
 }
 
 .topic-card:hover .topic-title-text {
