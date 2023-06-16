@@ -1,4 +1,4 @@
-.homeHeading {
+/* .homeHeading {
     margin-top: 150px;
     display: flex;
     flex-direction: column;
@@ -47,5 +47,16 @@ master
     margin-left: 20px;
     font-weight: bolder;
 }
-master
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
+
+.list li{
+    margin-top: 20px;
+    list-style-type: disc;
+    color: #ced6e0;
+    margin-left: 100px;
+} */
