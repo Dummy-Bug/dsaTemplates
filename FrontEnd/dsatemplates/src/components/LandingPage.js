@@ -4,6 +4,8 @@ import pic1 from "./images/subTopics_pic.jpeg";
 import list_pic2 from "./images/list_pic2.jpeg";
 import topics_pic from "./images/topics_pic.jpeg";
 
+//checking 
+
 const LandingPage = () => {
     return (
         <div className="homeContainer">
