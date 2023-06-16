@@ -1,19 +1,43 @@
-.Questions {
-  margin: 50px;
-  padding: 1px;
+div.Questions {
+  margin: 18px;
 }
 
 .table-container {
   background-color: #ced6e0;
+  margin-top: 30px;
   overflow-x: auto;
   padding-top: 0px;
+  max-height: 500px; /* Set a maximum height for the table container */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  position: fixed;
 }
+
 
 .table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }
+
+.progress-bar {
+  height: 10px;
+  max-width: 100%; /* Set a maximum width to ensure the progress bar doesn't exceed the table */
+  border-radius: 10px; /* Make the progress bar rounded */
+  background-color: rgb(72, 199, 142);
+  position: relative;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20%;
+  width: 0%;
+  background-color: rgb(72, 199, 142);
+  transition: width 0.5s ease-in-out; /* Add a smooth transition effect */
+}
+
 
 .table th,
 .table td {
@@ -94,40 +118,5 @@
   height: auto;
 }
 
-.progress-bar {
-  margin-top: 50px;
-  height: 10px;
-  width: 200px; /* Set a fixed width for the circular progress bar */
-  border-radius: 10px; /* Make the progress bar rounded */
-  background-color:rgb(72, 199, 142);
-  margin-bottom: 20px; /* Add a margin-bottom to separate the progress bar from the table */
-  position: relative;
-  overflow: hidden;
-}
 
-.progress-bar::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  background-color: rgb(72, 199, 142);
-  transition: width 0.5s ease-in-out; /* Add a smooth transition effect */
-}
-.superman-fly {
-  animation: superman-fly-animation 2s linear infinite;
-}
-
-@keyframes superman-fly-animation {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
