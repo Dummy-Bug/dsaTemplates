@@ -1,6 +1,6 @@
 package com.dsa.Template.controller;
 
-import com.dsa.Template.Entity.Question;
+import com.dsa.Template.entity.Question;
 import com.dsa.Template.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

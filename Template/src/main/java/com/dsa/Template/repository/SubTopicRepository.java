@@ -1,12 +1,10 @@
 package com.dsa.Template.repository;
 
-import com.dsa.Template.Entity.Question;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository

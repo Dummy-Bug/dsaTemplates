@@ -1,6 +1,6 @@
 package com.dsa.Template.service;
 
-import com.dsa.Template.Entity.Question;
+import com.dsa.Template.entity.Question;
 import com.dsa.Template.repository.QuestionRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

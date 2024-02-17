@@ -19,7 +19,9 @@
 //                    auth.requestMatchers("/topics").permitAll();
 //                    auth.anyRequest().authenticated();
 //                })
-//                .oauth2Login(Customizer.withDefaults())
+//
+//                .formLogin(Customizer.withDefaults())
 //                .build();
+//        //                .oauth2Login(Customizer.withDefaults())
 //    }
 //}

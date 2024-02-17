@@ -1,4 +1,4 @@
-package com.dsa.Template.Entity;
+package com.dsa.Template.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

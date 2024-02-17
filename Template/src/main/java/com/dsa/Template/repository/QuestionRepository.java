@@ -1,6 +1,6 @@
 package com.dsa.Template.repository;
 
-import com.dsa.Template.Entity.Question;
+import com.dsa.Template.entity.Question;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
