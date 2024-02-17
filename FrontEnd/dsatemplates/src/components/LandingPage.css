@@ -1,4 +1,4 @@
-/* .homeHeading {
+.homeHeading {
     margin-top: 150px;
     display: flex;
     flex-direction: column;
@@ -7,9 +7,8 @@
 }
 
 .homeHeading h1 {
-    margin-top: 30px;
-    color: #b45959;
-    font-size: 40px;
+    color: aliceblue;
+    font-size: 32px;
     font-weight: 50000;
 }
 
@@ -20,11 +19,12 @@
     text-align: center;
 }
 
-
-master
+.homeTagLine {
+    margin: 50px 0;
+    color: #c3bfdbcc;
     font-weight: bolder;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .container {
@@ -32,6 +32,29 @@ master
     width: 100%;
 }
 
+.image-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-image{
+    width: 50%;
+}
+
+.image-container:hover .center-image {
+    transform: translateX(50%);
+}
+
+.image-container:hover .text-container {
+    opacity: 1;
+}
+
+.image-container img {
+    transition: transform 0.5s ease;
+}
 
 .text-container {
     position: absolute;
@@ -45,6 +68,7 @@ master
 .text{
     color: #859fbd;
     margin-left: 20px;
+    margin-right: 25px;
     font-weight: bolder;
 }
 
@@ -59,4 +83,4 @@ master
     list-style-type: disc;
     color: #ced6e0;
     margin-left: 100px;
-} */
+}

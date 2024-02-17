@@ -8,7 +8,7 @@ const Navbar = () => {
       <ul>
         <li>
           <NavLink exact to="/" activeClassName="active">
-            MockDude
+            CodeBetter
           </NavLink>
         </li>
         <li>
@@ -22,7 +22,7 @@ const Navbar = () => {
             </NavLink>
         </li>
         <li style={{ float: 'right' }}>
-          <a href="/">Sign In</a>
+          <a href="https://chat.whatsapp.com/Jeb31C5IjY3ATSC69SQ10Y" target="_blank">Request Feature</a>
         </li>
       </ul>
     </div>

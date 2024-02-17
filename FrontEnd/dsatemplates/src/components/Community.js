@@ -9,7 +9,7 @@ const Community = () => {
     <div>
       <h1>Community</h1>
       <div className="cardContainer">
-        <div className="card">
+        {/* <div className="card">
         <a href="https://chat.whatsapp.com/Jeb31C5IjY3ATSC69SQ10Y" target="_blank" rel="noopener noreferrer">
           <div className='card-icon'>
           <img  src={whatsapp} className='card-image'alt='WhatsApp Group'/></div>
@@ -17,7 +17,7 @@ const Community = () => {
                 <p className='card-title-text'>Whatsapp</p>
           </div>
         </a>
-        </div>
+        </div> */}
         <div className="card">
         <a href="https://chat.whatsapp.com/Jeb31C5IjY3ATSC69SQ10Y" target="_blank" rel="noopener noreferrer">
           <div className='card-icon'>
@@ -27,7 +27,7 @@ const Community = () => {
           </div>
         </a>
         </div>
-        <div className="card">
+        {/* <div className="card">
         <a href="https://chat.whatsapp.com/Jeb31C5IjY3ATSC69SQ10Y" target="_blank" rel="noopener noreferrer">
           <div className='card-icon'>
           <img  src={discord} className='card-image'alt='WhatsApp Group'/></div>
@@ -35,7 +35,7 @@ const Community = () => {
                 <p className='card-title-text'>Discord</p>
           </div>
         </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

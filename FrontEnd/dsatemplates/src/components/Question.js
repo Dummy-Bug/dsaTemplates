@@ -9,8 +9,6 @@ import interviewBit from "./interviewBit.png";
 const Question = ({ topic, subTopic }) => {
 
   const [questions, setQuestions] = useState([]);
-  const [checkedQuestions, setCheckedQuestions]  = useState([]);
-  const [progressPercentage, setProgressPercentage] = useState(0);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -25,39 +23,13 @@ const Question = ({ topic, subTopic }) => {
     fetchQuestions();
   }, [topic, subTopic]);
   
-  const handleCheckboxChange = (question) => {
-    const isChecked = checkedQuestions.includes(question);
-  
-    let updatedCheckedQuestions = [];
-  
-    if (isChecked) {
-      updatedCheckedQuestions = checkedQuestions.filter((q) => q !== question);
-    } else {
-      updatedCheckedQuestions = [...checkedQuestions, question];
-    }
-    setCheckedQuestions(updatedCheckedQuestions);
-  };
-  const calculateProgressPercentage = () => {
-
-    const progressPercentage = (checkedQuestions.length / questions.length) * 100;
-    console.log(checkedQuestions.length,questions.length);
-    console.log(progressPercentage)
-    return progressPercentage;
-  };  
-  useEffect(() => {
-    const progressPercentage = calculateProgressPercentage();
-    setProgressPercentage(progressPercentage);
-  }, [checkedQuestions, questions]);
-  
 
   return (
     <div className="Questions">
-      <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
       <div className="table-container">
         <table className="table">
           <thead>
             <tr>
-              <th className="status-column">Status</th>
               <th className="title-column">Title</th>
               <th className="question-column">Problem</th>
               <th className="difficulty-column">Level</th>
@@ -67,14 +39,6 @@ const Question = ({ topic, subTopic }) => {
           <tbody>
             {questions.map((question) => (
               <tr key={question.questionId}>
-                <td className="status-column">
-                  <input
-                    type="checkbox"
-                    id={`checkbox-${question.questionId}`}
-                    onChange={() => handleCheckboxChange(question)}
-                  />
-                  <label htmlFor={`checkbox-${question.questionId}`}></label>
-                </td>
                 <td className="title-column">{question.title}</td>
                 <td className="question-column">{getQuestionLinkElement(question)}</td>
                 <td className="difficulty-column" data-difficulty={question.difficulty}>
@@ -123,7 +87,7 @@ const getQuestionLinkElement = (question) => {
 };
 
 const getSolutionLinkElement = (question) => {
-  if (question.solutionLink.includes('github')) {
+  if (question.solutionLink.includes('github#')) {
     return (
       <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
         <img src={githubLogo} alt="GitHub" className="logo github-logo" />
@@ -131,9 +95,9 @@ const getSolutionLinkElement = (question) => {
     );
   } else {
     return (
-      <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
-        Solution Link
-      </a>
+      // <a href={question.solutionLink} target="_blank" rel="noopener noreferrer">
+        <p>Coming Soon</p>
+      // </a>
     );
   }
 };

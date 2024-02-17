@@ -7,7 +7,7 @@ div.Questions {
   margin-top: 30px;
   overflow-x: auto;
   padding-top: 0px;
-  max-height: 500px; /* Set a maximum height for the table container */
+  max-height: 400px; /* Set a maximum height for the table container */
   overflow-y: scroll; /* Enable vertical scrolling */
   position: fixed;
 }
@@ -18,26 +18,6 @@ div.Questions {
   border-collapse: collapse;
   table-layout: fixed;
 }
-
-.progress-bar {
-  height: 10px;
-  max-width: 100%; /* Set a maximum width to ensure the progress bar doesn't exceed the table */
-  border-radius: 10px; /* Make the progress bar rounded */
-  background-color: rgb(72, 199, 142);
-  position: relative;
-}
-
-.progress-bar::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20%;
-  width: 0%;
-  background-color: rgb(72, 199, 142);
-  transition: width 0.5s ease-in-out; /* Add a smooth transition effect */
-}
-
 
 .table th,
 .table td {
@@ -58,22 +38,6 @@ div.Questions {
 
 .table td {
   font-weight: bold;
-}
-
-.status-column {
-  width: 5%;
-  text-align: center;
-}
-.status-column input[type="checkbox"] {
-  transform: scale(1.5); /* Increase the scale value to adjust the checkbox size */
-  width: 15px;
-  height: 15px;
-  border-radius: 20%; /* Make the checkbox circular */
-  border: 3px solid #b5bcc7;
-}
-
-.status-column input[type="checkbox"]:checked {
-  background-color:rgb(72, 199, 142); /* Change the background color when the checkbox is checked */
 }
 
 .title-column {
